@@ -30,10 +30,11 @@ puts "Your string is #{somestring}"
 puts "Your shift is #{shift}"
 puts "Your output choice is #{userinput}"
 
-  if (userinput=="encrypted"||userinput=="encrypt")
+case userinput
+  when "encrypted","encrypt"
     puts "Your encrypted string is:  #{machine.encrypt(somestring)}"
-  else if (userinput=="decrypted"||userinput=="decrypt")
-    puts machine.decrypt(somestring)
+  when "decrypted","decrypt"
+    puts "Your decrypted string is: #{machine.decrypt(somestring)}"
   else
     puts "Please say decrypt or encrypt."
   end 
@@ -51,5 +52,5 @@ puts "Your output choice is #{userinput}"
  
 puts "sentinel"
 
-end
+
 
