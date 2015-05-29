@@ -14,7 +14,7 @@ class Ceaser
   end
 end
 
-puts "What string would you like encrypted or decrypted?"
+puts "What string would you like decrypted?"
 string = gets.chomp
 
 puts "How much would you like it shifted by?"
@@ -25,14 +25,17 @@ machine = Ceaser.new(shift)
 puts "Would you like it decrypted or encrypted?"
 todo = gets.chomp
 
-  if todo=="encrypted"||"encrypt"
+def mainfunct
+  if (todo=="encrypted"||todo=="encrypt")
     puts machine.encrypt(string)  
-  else if todo=="decrypted"||"decrypt"
-    puts "test dec"
+  else if (todo=="decrypted"||todo=="decrypt")
+    puts machine.decrypt(string)
   else
     puts "Please say decrypt or encrypt."
  end 
+end
+
+mainfunct
 
 puts "sentinel"
 end
-
