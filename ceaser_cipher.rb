@@ -7,7 +7,6 @@ class Ceaser
     @decrypt=alphabet
     @somestring=nil
     @userinput=nil
-    @shift=nil
     @alphabet=alphabet
   end
 
@@ -30,7 +29,7 @@ class Ceaser
     @userinput = gets.chomp.to_s
 
     puts "Your string is #{@somestring}"
-    puts "Your shift is #{@shift}"
+    puts "Your shift is #{@shiftvalue}"
     puts "Your output choice is #{@userinput}"
 
     @realshift = @shiftvalue % @alphabet.size
