@@ -14,8 +14,9 @@ class Ceaser
   end
 end
 
+
 puts "What string would you like decrypted?"
-string = gets.chomp
+somestring = gets.chomp.to_s
 
 puts "How much would you like it shifted by?"
 shift = gets.chomp.to_i
@@ -23,19 +24,32 @@ shift = gets.chomp.to_i
 machine = Ceaser.new(shift)
 
 puts "Would you like it decrypted or encrypted?"
-todo = gets.chomp
+userinput = gets.chomp.to_s
 
-def mainfunct
-  if (todo=="encrypted"||todo=="encrypt")
-    puts machine.encrypt(string)  
-  else if (todo=="decrypted"||todo=="decrypt")
-    puts machine.decrypt(string)
+puts "Your string is #{somestring}"
+puts "Your shift is #{shift}"
+puts "Your output choice is #{userinput}"
+
+  if (userinput=="encrypted"||userinput=="encrypt")
+    puts "Your encrypted string is:  #{machine.encrypt(somestring)}"
+  else if (userinput=="decrypted"||userinput=="decrypt")
+    puts machine.decrypt(somestring)
   else
     puts "Please say decrypt or encrypt."
- end 
-end
+  end 
 
-mainfunct
-
+#def main(input,string)
+#  if (input=="encrypted"||input=="encrypt")
+#    puts "Your encrypted string is:  #{machine.encrypt(string)}"
+#  else if (input=="decrypted"||input=="decrypt")
+#    puts machine.decrypt(string)
+#  else
+#    puts "Please say decrypt or encrypt."
+#  end 
+#end
+#main("encrypted","slimestring")
+ 
 puts "sentinel"
+
 end
+
