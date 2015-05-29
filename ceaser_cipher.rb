@@ -1,8 +1,14 @@
 class Ceaser
-  def initialize(shiftvalue,alphabet = ('a'..'z').to_a.join)
-    realshift = shiftvalue % alphabet.size
-    @encrypt = alphabet[realshift..-1]+alphabet[0...realshift]
+  def initialize(name,alphabet = ('a'..'z').to_a.join)
+    @shiftvalue = nil
+    @realshift = nil
+    @encrypt = nil
     @decrypt = alphabet
+    @somestring=nil
+    @userinput=nil
+    @shift=nil
+    @name=name
+    @alphabet=alphabet
   end
 
   def encrypt(string)
@@ -12,32 +18,41 @@ class Ceaser
   def decrypt(string)
     string.tr(@encrypt, @decrypt)
   end
+
+  def inputsprompt
+    puts "What string would you like decrypted?"
+    @somestring = gets.chomp.to_s
+
+    puts "How much would you like it shifted by?"
+    @shiftvalue = gets.chomp.to_i
+
+    puts "Would you like it decrypted or encrypted?"
+    @userinput = gets.chomp.to_s
+
+    puts "Your string is #{@somestring}"
+    puts "Your shift is #{@shift}"
+    puts "Your output choice is #{@userinput}"
+
+    @realshift = @shiftvalue % @alphabet.size
+    @encrypt = @alphabet[@realshift..-1]+@alphabet[0...@realshift]
+    @decrypt = @alphabet
+  end
+
+  def main
+    case @userinput
+    when "encrypted","encrypt"
+        puts "Your encrypted string is:  #{self.encrypt(@somestring)}"
+    when "decrypted","decrypt"
+        puts "Your decrypted string is: #{self.decrypt(@somestring)}"
+    else
+        puts "Please say decrypt or encrypt."
+    end 
+  end 
 end
 
-
-puts "What string would you like decrypted?"
-somestring = gets.chomp.to_s
-
-puts "How much would you like it shifted by?"
-shift = gets.chomp.to_i
-
-machine = Ceaser.new(shift)
-
-puts "Would you like it decrypted or encrypted?"
-userinput = gets.chomp.to_s
-
-puts "Your string is #{somestring}"
-puts "Your shift is #{shift}"
-puts "Your output choice is #{userinput}"
-
-case userinput
-  when "encrypted","encrypt"
-    puts "Your encrypted string is:  #{machine.encrypt(somestring)}"
-  when "decrypted","decrypt"
-    puts "Your decrypted string is: #{machine.decrypt(somestring)}"
-  else
-    puts "Please say decrypt or encrypt."
-  end 
+machine = Ceaser.new("machine")
+machine.inputsprompt
+machine.main
 
 #def main(input,string)
 #  if (input=="encrypted"||input=="encrypt")
