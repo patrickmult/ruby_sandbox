@@ -8,7 +8,6 @@ class Ceaser
     @somestring=nil
     @userinput=nil
     @shift=nil
-    @name=name
     @alphabet=alphabet
   end
 
