@@ -25,12 +25,13 @@ machine = Ceaser.new(shift)
 puts "Would you like it decrypted or encrypted?"
 todo = gets.chomp
 
-if (todo=="encrypted"||todo=="encrypt")
-  puts machine.encrypt(string)  
-else if todo=="decrypted"||"decrypt"
-  puts "test dec"
-else
-  puts "Please say decrypt or encrypt."
-end
+  if todo=="encrypted"||"encrypt"
+    puts machine.encrypt(string)  
+  else if todo=="decrypted"||"decrypt"
+    puts "test dec"
+  else
+    puts "Please say decrypt or encrypt."
+ end 
 
-end
+puts "sentinel"
+
