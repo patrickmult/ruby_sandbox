@@ -34,4 +34,5 @@ todo = gets.chomp
  end 
 
 puts "sentinel"
+end
 
