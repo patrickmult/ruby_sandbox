@@ -1,9 +1,10 @@
+#Ceaser cipher in Ruby. Run in terminal.
 class Ceaser
-  def initialize(name,alphabet = ('a'..'z').to_a.join)
-    @shiftvalue = nil
-    @realshift = nil
-    @encrypt = nil
-    @decrypt = alphabet
+  def initialize(alphabet = ('a'..'z').to_a.join)
+    @shiftvalue=nil
+    @realshift=nil
+    @encrypt=nil
+    @decrypt=alphabet
     @somestring=nil
     @userinput=nil
     @shift=nil
@@ -20,7 +21,7 @@ class Ceaser
   end
 
   def inputsprompt
-    puts "What string would you like decrypted?"
+    puts "Please type string to be encrypted or decrypted"
     @somestring = gets.chomp.to_s
 
     puts "How much would you like it shifted by?"
@@ -50,22 +51,9 @@ class Ceaser
   end 
 end
 
-machine = Ceaser.new("machine")
+machine = Ceaser.new
 machine.inputsprompt
 machine.main
 
-#def main(input,string)
-#  if (input=="encrypted"||input=="encrypt")
-#    puts "Your encrypted string is:  #{machine.encrypt(string)}"
-#  else if (input=="decrypted"||input=="decrypt")
-#    puts machine.decrypt(string)
-#  else
-#    puts "Please say decrypt or encrypt."
-#  end 
-#end
-#main("encrypted","slimestring")
- 
-puts "sentinel"
-
-
+puts "Sentinel"
 
