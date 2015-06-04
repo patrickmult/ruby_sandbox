@@ -2,6 +2,11 @@
 #optimal buy/sell date for greatest possible gain
 #in value
 #
+#You may pass an array as an argument while runnign script
+#example: ruby array_value_dif_finder.rb [1,2,51,5]
+#
+#If no array is passed it will run on the sample array
+#
 #To do: add a prompt for an array if none given
 
 def picker(arrayin)
@@ -29,6 +34,12 @@ def picker(arrayin)
 end
 
 #sample call
+if ARGV[0]
+  input = ARGV.first.scan(/\d/).map(&:to_i)
+  picker(input)
+  abort
+end
+
 picker([17,3,6,9,15,8,6,1,10])
 
 
