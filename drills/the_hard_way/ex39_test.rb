@@ -34,7 +34,7 @@ puts "Florida's abbreviation is: #{Dict.get(states, 'Florida')}"
 
 # do it by using the state then cities dict
 seperator
-puts "Michigan has: #{Dict.get(citites, Dict.get(states, 'Michigan'))}"
+puts "Michigan has: #{Dict.get(cities, Dict.get(states, 'Michigan'))}"
 puts "Florida has: #{Dict.get(cities, Dict.get(states, 'Florida'))}"
 
 # puts every state abbreviation
@@ -54,6 +54,6 @@ if !state
 end
 
 # default values using ||= with the nil result
-city = Dict.get(citites, 'TX', 'Does Not Exist')
+city = Dict.get(cities, 'TX', 'Does Not Exist')
 puts "The city for the state 'TX' is: #{city}"
 

@@ -12,6 +12,10 @@ module Dict
   def Dict.hash_key(aDict, key)
     # Given a key this will create a number then convert it to
     # an index for the aDict's buckets.
+   # puts '!' * 20
+   # puts key.hash
+   # puts aDict.length
+   # puts key.hash % aDict.length
     return key.hash % aDict.length
   end
 
@@ -32,7 +36,7 @@ module Dict
       end
     end
 
-    reutrn -1, key, default
+    return -1, key, default
   end
 
   def Dict.get(aDict, key, default=nil)
